@@ -52,9 +52,10 @@ from pupil_server import Pupil_Server
 from pupil_remote import Pupil_Remote
 from marker_detector import Marker_Detector
 from fixation_detector import Fixation_Detector, Dispersion_Fixation_Detector
+from plugin481 import ClickDetect
 
 #manage plugins
-user_launchable_plugins = [Show_Calibration,Pupil_Server,Pupil_Remote,Marker_Detector] # TODO: Dispersion_Fixation_Detector
+user_launchable_plugins = [Show_Calibration,Pupil_Server,Pupil_Remote,Marker_Detector,ClickDetect] # TODO: Dispersion_Fixation_Detector
 system_plugins  = [Display_Recent_Gaze,Recorder]
 plugin_by_index =  user_launchable_plugins+system_plugins+calibration_plugins+gaze_mapping_plugins
 name_by_index = [p.__name__ for p in plugin_by_index]
@@ -280,7 +281,7 @@ def world(g_pool,cap_src,cap_size):
     pupil_graph = graph.Bar_Graph(max_val=1.0)
     pupil_graph.pos = (260,130)
     pupil_graph.update_rate = 5
-    pupil_graph.label = "Confidence: %0.2f"
+    pupil_graph.label = "Confidences: %0.2f"
 
     # Event loop
     while not g_pool.quit.value:

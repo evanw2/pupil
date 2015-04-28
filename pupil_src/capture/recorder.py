@@ -247,6 +247,7 @@ class Recorder(Plugin):
 
             for g in events.get('gaze',[]):
                 gaze_pos = g['timestamp'],g['confidence'],g['norm_pos'][0],g['norm_pos'][1]
+                print gaze_pos
                 self.gaze_list.append(gaze_pos)
 
             self.timestamps.append(frame.timestamp)
