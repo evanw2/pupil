@@ -54,6 +54,8 @@ from marker_detector import Marker_Detector
 from fixation_detector import Fixation_Detector, Dispersion_Fixation_Detector
 from plugin481 import ClickDetect
 
+from plugin481 import ClickDetect
+
 #manage plugins
 user_launchable_plugins = [Show_Calibration,Pupil_Server,Pupil_Remote,Marker_Detector,ClickDetect] # TODO: Dispersion_Fixation_Detector
 system_plugins  = [Display_Recent_Gaze,Recorder]
